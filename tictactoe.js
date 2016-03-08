@@ -50,15 +50,24 @@ function checkWin(){
 		thisWinCombination = winners[i];
 		for(j=0; j<thisWinCombination.length; j++){
 			if(playerOneMarkings.indexOf(thisWinCombination[j]) > -1){
-				rowCount++;
-			}
+				rowCount++;}
+	
 		}
 
 		if(rowCount === 3){
 			gameOver(thisWinCombination);
 		}
+		for(i=0; i < winners.length; i++){
+		rowCount = 0;
+		thisWinCombination = winners[i];
+		for(j=0; j<thisWinCombination.length; j++){
+			if(playerTwoMarkings.indexOf(thisWinCombination[j]) > -1){
+				rowCount++;}
+				if(rowCount === 3){
+			gameOver2(thisWinCombination);
+		}
 	}
-}
+}}}
 
 function gameOver(combo){
 	var gameHeader = document.getElementById('game-header');
@@ -68,19 +77,19 @@ function gameOver(combo){
 	gameHeader.innerHTML = 'Player One, won the game!';
 	
 }
+
+function gameOver2(combo){
+	var gameHeader = document.getElementById('game-header');
+	for(i=0; i<combo.length; i++){
+		document.getElementById(combo[i]).classList.add('winner');
+	}
+	gameHeader.innerHTML = 'Player Two, won the game!';
+	
+}
+
+
 var squareWidth = document.getElementById('a1').clientWidth;
 var squares = document.getElementsByClassName('squares');
 for(i=0; i < a1.length; i++){
 	squares[i].style.height = squareWidth + 'px';
 }
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
