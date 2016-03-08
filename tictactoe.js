@@ -1,31 +1,3 @@
-// function aOne(){
-// 	document.getElementById('xa1').style.visibility = "visible";
-// }
-// function aTwo(){
-// 	document.getElementById('xa2').style.visibility = "visible";
-// }
-// function aThree(){
-// 	document.getElementById('xa3').style.visibility = "visible";
-// }
-// function bOne(){
-// 	document.getElementById('xb1.empty').style.visibility = "visible";
-// }
-// function bTwo(){
-// 	document.getElementById('xb2.empty').style.visibility = "visible";
-// }
-// function bThree(){
-// 	document.getElementById('xb3.empty').style.visibility = "visible";
-// }
-// function cOne(){
-// 	document.getElementById('xc1.empty').style.visibility = "visible";
-// }
-// function cTwo(){
-// 	document.getElementById('xc2.empty').style.visibility = "visible";
-// }
-// function cThree(){
-// 	document.getElementById('xc3.empty').style.visibility = "visible";
-// }
-
 var winners = [
 ['a1' ,'a2', 'a3'],
 ['b1' ,'b2', 'b3'],
@@ -35,7 +7,6 @@ var winners = [
 ['a3' ,'b3', 'c3'],
 ['a1' ,'b2', 'c3'],
 ['a3' ,'b2', 'c1'],
-
 ];
 
 var playerOneMarkings = [];
@@ -87,8 +58,6 @@ function checkWin(){
 			gameOver(thisWinCombination);
 		}
 	}
-
-
 }
 
 function gameOver(combo){
