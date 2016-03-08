@@ -130,3 +130,7 @@
 #grid{
 	text-align: center;
 }
+
+.winner{
+	background-color: yellow;
+}
