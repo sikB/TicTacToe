@@ -21,12 +21,10 @@ var whosTurn = 1;
 function computerChoice(){
 	var computerHasntMoved = 1;
 	while(computerHasntMoved){	
-		var emptySquares = Math.floor(Math.random()*8);
-		// console.log(emptySquares);
+		var emptySquares = Math.floor(Math.random()*8) + 1;
 		var cpuRand = options[emptySquares];
 		if(whosTurn == 2){
 			var cpuSquare = document.getElementById(cpuRand);
-			// console.log(cpuRand);
 			if(cpuSquare.innerHTML == ""){
 	 			cpuSquare.innerHTML = 'O';
 	 			whosTurn = 1;
@@ -36,21 +34,7 @@ function computerChoice(){
 		}
 	}
 
- // 	else{
-	// 		
-	// var emptySquares = document.getElementsByClassName('empty');
-	// var randomEmptySquare = Math.round(Math.random() * options.length);
-	// console.log(emptySquares[options]);
-	// emptySquares[options].innerHTML = 'O';
-	// whosTurn = 2;
-	// gameHeader.innerHTML = "Its Player 1's turn";
-	// gameHeader.className = 'player-one';
-	// element.classList.remove('empty');
-	// element.classList.add('p2');
-	// playerTwoMarkings.push(element.id);
 	checkWin();
-	
-
  }
 
 
@@ -61,23 +45,12 @@ function addSymbol(element){
 		if(whosTurn == 1){
 			element.innerHTML = 'X';
 			whosTurn = 2;
-			// gameHeader.innerHTML = "Its Player 2's turn";
-			// gameHeader.className = 'player-two';
 			element.classList.remove('empty');
 			element.classList.add('p1');
 			playerOneMarkings.push(element.id);
 			computerChoice();
 			checkWin();
-		}
-			// else{
-			// 	element.innerHTML = 'O';
-			// 	whosTurn = 1;
-			// 	gameHeader.innerHTML = "Its Player 1's turn";
-			// 	gameHeader.className = 'player-one';
-				// element.classList.remove('empty');
-			// 	element.classList.add('p2');
-				// playerTwoMarkings.push(element.id);
-			// }
+			}
 		}
 	else{
 		gameHeader.innerHTML = "This box is taken";
@@ -103,16 +76,16 @@ function checkWin(){
 		}
 	}
 	for(i=0; i < winners.length; i++){
-	rowCount = 0;
+	rowCount1 = 0;
 	thisWinCombination = winners[i];
 	for(j=0; j<thisWinCombination.length; j++){
 		if(playerTwoMarkings.indexOf(thisWinCombination[j]) > -1){
-			rowCount++;}
-			if(rowCount === 3){
+			rowCount1++;}
+			if(rowCount1 === 3){
 				gameOver2(thisWinCombination);
-				break;
+				
 			}
-		}
+		}break;	
 	}
 
 }
