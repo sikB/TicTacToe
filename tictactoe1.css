@@ -1,0 +1,105 @@
+#wrapper{
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	height: 100vh;
+	display: inline-block;
+	top: 500%;
+	left: 25%;
+
+}
+
+.a1{
+	position: absolute;
+	width: 15%;
+	height: 22%;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+	top: 1%;
+	left: 1%;
+	
+}
+
+.a2{
+	position: absolute;
+	width: 15%;
+	height: 22%;
+	border-bottom: 5px solid black;
+	border-right: 5px solid black;
+	top: 1%;
+	left: 16%;
+	
+}
+
+.a3{
+	position: absolute;
+	width: 15%;
+	height: 20%;
+	border-bottom: 5px solid black;
+	top: 3%;
+	left: 31%;
+}
+
+.b1{
+	position: absolute;
+	width: 15%;
+	height: 22%;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+	top: 23.5%;
+	left: 1%;
+
+}
+
+.b2{
+	position: absolute;
+	width: 15%;
+	height: 22%;
+	border-bottom: 5px solid black;
+	border-right: 5px solid black;
+	top: 23.5%;
+	left: 16%;
+}
+
+.b3{
+	position: absolute;
+	width: 15%;
+	height: 20%;
+	top: 25.5%;
+	left: 31%;
+	border-bottom: 5px solid black;
+}
+
+.c1{
+	position: absolute;
+	width: 15%;
+	height: 20%;
+	border-right: 5px solid black;
+	top: 46%;
+	left: 1%;
+}
+
+.c2{
+	position: absolute;
+	width: 15%;
+	height: 20%;
+	border-right: 5px solid black;
+	top: 46%;
+	left: 16%;
+}
+
+.c3{
+	position: absolute;
+	width: 15%;
+	height: 20%;
+	top: 46%;
+	left: 31%;
+}
+
+img{
+	width: 100px;
+	text-align: center;
+	position: relative;
+	top: 15%;
+	left: 25%;
+}
