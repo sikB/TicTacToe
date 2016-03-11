@@ -2,17 +2,24 @@
 <html>
 <head>
 	<title>Tic-Tac-Toe</title>
-	<link rel="stylesheet" type="text/css" href="tictactoe1.css">
 	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="tictactoe1.css">
+	
 </head>
 <body>
 
 	<h1 id="game-header">Play tic-tac-toe</h1>
 
 <div id="wrapper">
+
 	<div id="grid">
 
-			<div class="squares">
+		<div class="num-players">
+		<button id="one-player" onclick="onePlayer()">1 Player</button>
+		<button id="two-player" onclick="twoPlayers()">2 Player</button>
+		</div>
+
+		<div class="squares">
 		<div id="a1" onclick="addSymbol(this);"></div>
 		<div id="a2" onclick="addSymbol(this);"></div>
 		<div id="a3" onclick="addSymbol(this);"></div></div>

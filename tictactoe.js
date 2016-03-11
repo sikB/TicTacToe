@@ -17,6 +17,8 @@ var options =
 var playerOneMarkings = [];
 var playerTwoMarkings = [];
 var whosTurn = 1;
+var computer;
+var playMode;
 
 function computerChoice(){
 	var computerHasntMoved = 1;
@@ -33,13 +35,29 @@ function computerChoice(){
 			}
 		}
 	}
-
 	checkWin();
  }
 
+function onePlayer(){
+	computer = true;
+	document.getElementById('game-header').innerHTML = "Your turn!";
+	var buttons = document.getElementsByClassName('squares');
+	for(i=0; i<buttons.length; i++){
+		buttons[i].style.pointerEvents = 'auto';
+	}
+}
 
+function twoPlayers(){
+	computer = false;
+	document.getElementById('game-header').innerHTML = "Player 2's turn!";
+	var buttons = document.getElementsByClassName('squares');
+	for(i=0; i<buttons.length; i++){
+		buttons[i].style.pointerEvents = 'auto';
+	}
+}
 
 function addSymbol(element){
+	console.log(element);
 	var gameHeader = document.getElementById('game-header')
 	if (element.innerHTML == '') {
 		if(whosTurn == 1){
@@ -48,11 +66,14 @@ function addSymbol(element){
 			element.classList.remove('empty');
 			element.classList.add('p1');
 			playerOneMarkings.push(element.id);
-			computerChoice();
 			checkWin();
+			if(computer == true){
+				computerChoice();	
 			}
+		}else{
+			//its player 2s turn. Do the same as above, but with Os
 		}
-	else{
+	}else{
 		gameHeader.innerHTML = "This box is taken";
 		gameHeader.className = "red";
 	}
@@ -77,15 +98,15 @@ function checkWin(){
 	}
 	for(i=0; i < winners.length; i++){
 	rowCount1 = 0;
-	thisWinCombination = winners[i];
-	for(j=0; j<thisWinCombination.length; j++){
-		if(playerTwoMarkings.indexOf(thisWinCombination[j]) > -1){
+	thisWinCombination1 = winners[i];
+	for(j=0; j<thisWinCombination1.length; j++){
+		if(playerTwoMarkings.indexOf(thisWinCombination1[j]) > -1){
 			rowCount1++;}
-			if(rowCount1 === 3){
-				gameOver2(thisWinCombination);
-				
-			}
-		}break;	
+		}
+		if(rowCount1 === 3){
+			gameOver2(thisWinCombination1);
+			break;	
+		}		
 	}
 
 }
